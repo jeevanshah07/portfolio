@@ -6,12 +6,20 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "deploy": "wrangler deploy",
+    "wrangler-dev": "wrangler dev",
+    "wrangler-start": "wrangler dev",
+    "test": "vitest",
+    "cf-typegen": "wrangler types"
   },
   "dependencies": {
+    "cloudflare": "^5.2.0",
+    "next": "15.5.3",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "next": "15.5.3"
+    "react-terminal-ui": "^1.4.0",
+    "wrangler": "^4.42.0"
   },
   "devDependencies": {
     "typescript": "^5",
@@ -22,6 +30,9 @@
     "tailwindcss": "^4",
     "eslint": "^9",
     "eslint-config-next": "15.5.3",
-    "@eslint/eslintrc": "^3"
+    "@eslint/eslintrc": "^3",
+    "@cloudflare/vitest-pool-workers": "^0.8.19",
+    "vitest": "~3.2.0",
+    "wrangler": "^4.42.0"
   }
 }
