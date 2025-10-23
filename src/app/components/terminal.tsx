@@ -24,15 +24,15 @@ export default function TerminalController() {
     </TerminalOutput>,
   ]);
   const [termHeight, setTermHeight] = useState("0px");
-  const [termHistory, setTermHistory] = useState<String[]>([]);
+  const [termHistory, setTermHistory] = useState<string[]>([]);
 
   useEffect(() => {
     setTermHeight(`${window.innerHeight}px`);
-  });
+  }, []);
 
-  const handleTerminalInput = async (terminalInput: String) => {
-    let terminalOutput: String | ReactElement = "";
-    let validCommand: Boolean = true;
+  const handleTerminalInput = async (terminalInput: string) => {
+    let terminalOutput: string | ReactElement = "";
+    let validCommand: boolean = true;
 
     setTermHistory([...termHistory, terminalInput]);
 

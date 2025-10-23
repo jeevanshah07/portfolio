@@ -1,32 +1,32 @@
 import Link from "next/link";
 
-export function help(): String {
+export function help(): string {
   return `whoami - who are you\nwhois - who is Jeevan Shah\nprojects - learn about some of my notable personal projects\neducation - educational background\nwork - read about my previous work experience\nsocials - check out how to connect with me\nhistory - view command history\nask [question] - ask any question\nemail - send me an email\nresume - view my formal resume\nclear - clears the terminal\n`;
 }
 
-export function whoami(): String {
+export function whoami(): string {
   return "visitor@jeevan.shah.dev\n";
 }
 
-export function ask(question: String): String {
+export function ask(question: string): string {
   return question;
 }
 
-export function education(): String {
-  const edu: String =
+export function education(): string {
+  const edu: string =
     "2021-2025: West Morris Mendham High School\n\tGPA: 5.463/6 \n2025-Present: The Honors College at Rutgers University\n\tB.S. in Mathematics\n\tB.S. in Computer Science\n";
 
   return edu;
 }
 
-export function whois(): String {
-  const bio: String =
+export function whois(): string {
+  const bio: string =
     "Hi, I'm Jeevan Shah!\nI'm a full stack software engineer and mathematician passionate about connecting the real world with theoretical and abstract ones.\n";
 
   return bio;
 }
 
-export function email(): String {
+export function email(): string {
   window.open(
     "mailto:jeevandshah@gmail.com",
     "_blank",
@@ -35,7 +35,7 @@ export function email(): String {
   return "Sending an email!";
 }
 
-export function resume(): String {
+export function resume(): string {
   window.open(
     "https://images.sevenlayer.org/Jeevan%20Shah%20Resume.pdf",
     "_blank",
@@ -44,7 +44,7 @@ export function resume(): String {
   return "Opening in new tab!";
 }
 
-export function history(commands: String[]): String {
+export function history(commands: string[]): string {
   let historyString = "";
 
   for (const str of commands) {
@@ -80,7 +80,7 @@ export function renderSocials() {
   );
 }
 
-export function commandNotFound(command: String) {
+export function commandNotFound(command: string) {
   return (
     <div>
       Command `<span className="text-red-500">{command}</span>` not found!
@@ -91,7 +91,7 @@ export function commandNotFound(command: String) {
 export function work() {
   return (
     <div>
-      Over the past few years I've had the wonderful opportunity to work as a
+      Over the past few years I&apos;ve had the wonderful opportunity to work as a
       freelance software engineer!
       <p>
         <u className="text-rose-500">College Canine</u> (2024-2025)
