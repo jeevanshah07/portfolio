@@ -54,6 +54,44 @@ export function history(commands: string[]): string {
   return historyString;
 }
 
+export function welcome() {
+  return (
+    <div className="inline-block p-2 bg-[#252A33]">
+      <pre className="text-green-400 text-xs leading-none font-mono">
+        {` ___                             ____  _           _     
+|_  |                           / ___|| |         | |    
+  | | ___  _____   ____ _ _ __ \\ \`--. | |__   __ _| |__  
+  | |/ _ \\/ _ \\ \\ / / _\` | '_ \\ \`--. \\| '_ \\ / _\` | '_ \\ 
+ _| |  __/  __/\\ V / (_| | | | /\\__/ /| | | | (_| | | | |
+ \\__/\\___|\\___| \\_/ \\__,_|_| |_\\____/ |_| |_|\\__,_|_| |_|`}
+      </pre>
+      <br />
+      <pre className="text-yellow-400">
+        {`------------------------------------------------------------------`}
+      </pre>
+      <br />
+      <p>Welcome to my portfolio!</p>
+      <p>
+        You can find the code for this website on
+        <Link
+          className="underline text-sky-400 pl-3 hover:drop-shadow-sky-700 hover:drop-shadow-md"
+          href="https://github.com/jeevanshah07/portfolio"
+          target="_blank"
+        >
+          Github
+        </Link>
+      </p>
+      <p>
+        Type `
+        <span className="text-green-400 drop-shadow-md drop-shadow-green-500">
+          help
+        </span>
+        ` to see the available commands
+      </p>
+    </div>
+  );
+}
+
 export function renderSocials() {
   return (
     <div>
@@ -91,36 +129,40 @@ export function commandNotFound(command: string) {
 export function work() {
   return (
     <div>
-      Over the past few years I&apos;ve had the wonderful opportunity to work as a
-      freelance software engineer!
+      Over the past few years I&apos;ve had the wonderful opportunity to work as
+      a freelance software engineer!
       <p>
         <u className="text-rose-500">College Canine</u> (2024-2025)
         <br />
         &nbsp;&nbsp;At College Canine I was a fullstack developer helping work
         on their{" "}
         <u className="text-sky-400">
-          <Link href="https://collegecanine.com/" target="_blank">website</Link>
+          <Link href="https://collegecanine.com/" target="_blank">
+            website
+          </Link>
         </u>{" "}
-        which was written using{" "}
-        <span className="text-purple-600">NextJS</span>,{" "}
+        which was written using <span className="text-purple-600">NextJS</span>,{" "}
         <span className="text-violet-600">Prisma</span>, and{" "}
         <span className="text-indigo-600">Supabase</span>.
         <br />
-        &nbsp;&nbsp;&nbsp;&nbsp;Beyond that, I was also the sole developer in charge of writing their mobile app using{" "}
+        &nbsp;&nbsp;&nbsp;&nbsp;Beyond that, I was also the sole developer in
+        charge of writing their mobile app using{" "}
         <span className="text-blue-600">Flutter</span>
       </p>
       <br />
       <p>
         <u className="text-rose-500">STEMpire Tutoring</u> (2023-2025)
         <br />
-        &nbsp;&nbsp;At STEMpire Tutoring I was the Chief Technological Officer in charge of all development and systems. 
+        &nbsp;&nbsp;At STEMpire Tutoring I was the Chief Technological Officer
+        in charge of all development and systems.
         <br />
         &nbsp;&nbsp;&nbsp;&nbsp;I wrote the company{" "}
         <u className="text-sky-400">
-          <Link href="https://stempiretutoring.com/" target="_blank">website</Link>
+          <Link href="https://stempiretutoring.com/" target="_blank">
+            website
+          </Link>
         </u>{" "}
-        using{" "}
-        <span className="text-red-600">NextJS</span>,{" "}
+        using <span className="text-red-600">NextJS</span>,{" "}
         <span className="text-orange-600">Stripe</span>,{" "}
         <span className="text-amber-600">Auth0</span>,{" "}
         <span className="text-yellow-600">MongoDB</span>, and{" "}

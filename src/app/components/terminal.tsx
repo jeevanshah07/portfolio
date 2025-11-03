@@ -5,6 +5,7 @@ import {
   education,
   email,
   help,
+  welcome,
   renderSocials,
   whoami,
   whois,
@@ -20,7 +21,13 @@ import { wranglerResponse } from "../api/types";
 export default function TerminalController() {
   const [terminalLineData, setTerminalLineData] = useState([
     <TerminalOutput key={Math.random()}>
-      <div>Run `<span className="text-green-400 drop-shadow-md drop-shadow-green-500">help</span>` to get started!</div>
+      <div>
+        Run `
+        <span className="text-green-400 drop-shadow-md drop-shadow-green-500">
+          welcome
+        </span>
+        ` to get started!
+      </div>
     </TerminalOutput>,
   ]);
   const [termHeight, setTermHeight] = useState("0px");
@@ -57,6 +64,8 @@ export default function TerminalController() {
       terminalOutput = resume();
     } else if (terminalInput.toLowerCase() == "whois") {
       terminalOutput = whois();
+    } else if (terminalInput.toLowerCase() == "welcome") {
+      terminalOutput = welcome();
     } else if (terminalInput.split(" ")[0].toLowerCase() == "ask") {
       const match = terminalInput.match(/^\S+\s*(.*)$/);
       const question = match ? match[1] : "";
@@ -79,7 +88,11 @@ export default function TerminalController() {
     setTerminalLineData([
       ...terminalLineData,
       <TerminalOutput key={Math.random()}>
-        $<span className={validCommand ? "text-green-400" : "text-red-500"}> {terminalInput}</span>
+        $
+        <span className={validCommand ? "text-green-400" : "text-red-500"}>
+          {" "}
+          {terminalInput}
+        </span>
         <br />
         {terminalOutput}
         <br />
