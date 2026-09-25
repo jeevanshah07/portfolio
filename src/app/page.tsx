@@ -5,8 +5,6 @@ import "./portfolio.css";
 
 const jetBrainsMono = localFont({ src: "./fonts/JetBrainsMono-Latin.woff2", weight: "400 800", display: "swap", variable: "--font-jetbrains-mono" });
 
-export const dynamic = "force-dynamic";
-
 const features = [
   {
     number: "01",

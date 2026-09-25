@@ -30,8 +30,7 @@ export async function getPublicActivity() {
 
   for (let page = 1; page <= 3; page++) {
     const response = await fetch(`https://api.github.com/users/jeevanshah07/events/public?per_page=100&page=${page}`, {
-      headers: { Accept: "application/vnd.github+json", "User-Agent": "jeevanshah-portfolio" },
-      next: { revalidate: 3600 },
+      headers: { Accept: "application/vnd.github+json" },
     });
     if (!response.ok) throw new Error(`GitHub activity request failed: ${response.status}`);
     const data: unknown = await response.json();

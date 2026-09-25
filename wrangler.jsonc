@@ -1,16 +1,6 @@
 {
-	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "portfolio",
-	"main": ".open-next/worker.js",
-  "compatibility_flags": [
-    "nodejs_compat"
-  ],
-	"compatibility_date": "2025-10-23",
-	"observability": {
-		"enabled": true
-	},
-  "assets": {
-    "directory": ".open-next/assets",
-    "binding": "ASSETS"
-  }
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "portfolio",
+  "compatibility_date": "2025-10-23",
+  "pages_build_output_dir": "./out"
 }
