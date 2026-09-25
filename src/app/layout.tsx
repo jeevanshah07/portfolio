@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const jbm = JetBrains_Mono({ subsets: ["latin"] });
-
 export const metadata: Metadata = {
-  title: "Jeevan Shah's Portfolio",
+  title: "Jeevan Shah | Full-stack Developer",
+  description:
+    "Jeevan Shah is a Rutgers computer science and mathematics student building accessible web tools, data systems, and software for Formula Racing.",
 };
 
 export default function RootLayout({
@@ -15,11 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${jbm.className} dark antialiased`}
-      >
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

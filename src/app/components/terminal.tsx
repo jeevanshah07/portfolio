@@ -1,5 +1,5 @@
 "use client";
-import React, { ReactElement, useState, useEffect } from "react";
+import React, { ReactElement, useState } from "react";
 import Terminal, { ColorMode, TerminalOutput } from "react-terminal-ui";
 import {
   education,
@@ -16,7 +16,6 @@ import {
   work,
 } from "../terminal/terminal";
 import "./styles.css";
-import { wranglerResponse } from "../api/types";
 
 export default function TerminalController() {
   const [terminalLineData, setTerminalLineData] = useState([
@@ -30,14 +29,9 @@ export default function TerminalController() {
       </div>
     </TerminalOutput>,
   ]);
-  const [termHeight, setTermHeight] = useState("0px");
   const [termHistory, setTermHistory] = useState<string[]>([]);
 
-  useEffect(() => {
-    setTermHeight(`${window.innerHeight}px`);
-  }, []);
-
-  const handleTerminalInput = async (terminalInput: string) => {
+  const handleTerminalInput = (terminalInput: string) => {
     let terminalOutput: string | ReactElement = "";
     let validCommand: boolean = true;
 
@@ -66,18 +60,6 @@ export default function TerminalController() {
       terminalOutput = whois();
     } else if (terminalInput.toLowerCase() == "welcome") {
       terminalOutput = welcome();
-    } else if (terminalInput.split(" ")[0].toLowerCase() == "ask") {
-      const match = terminalInput.match(/^\S+\s*(.*)$/);
-      const question = match ? match[1] : "";
-
-      console.log("ask");
-
-      const res = await fetch(
-        `/api/wrangler?question=${encodeURIComponent(question)}`,
-      );
-      const data: wranglerResponse = await res.json();
-
-      terminalOutput = data.result.response;
     } else if (terminalInput.toLowerCase() == "history") {
       terminalOutput = history(termHistory);
     } else {
@@ -105,8 +87,8 @@ export default function TerminalController() {
       <Terminal
         name="Jeevan Shah"
         colorMode={ColorMode.Dark}
-        prompt="visitor@jeevan.shah.dev:~$"
-        height={termHeight}
+        prompt="visitor@jeevanshah.dev:~$"
+        height="calc(100dvh - 40px)"
         onInput={(terminalInput) => handleTerminalInput(terminalInput)}
         TopButtonsPanel={() => null}
       >
