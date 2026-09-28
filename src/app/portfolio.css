@@ -92,6 +92,10 @@
 .ep-roles h3 { font-size: 28px; font-weight: 400; margin: 10px 0 4px; }
 .ep-roles article div > p:last-child { color: var(--ep-dim); margin: 0; }
 .ep-roles article > p { margin: 0; color: #c9c2c2; line-height: 1.6; }
+.ep-coursework { list-style: none; padding: 0; margin: 16px 0 0; color: #c9c2c2; font-size: 14px; line-height: 1.6; }
+.ep-coursework li { padding: 9px 0; border-bottom: 1px solid var(--ep-line); }
+.ep-coursework li:first-child { padding-top: 0; }
+.ep-coursework li:last-child { border-bottom: 0; padding-bottom: 0; }
 .ep-contact { padding: 75px 24px 88px; border-top: 1px solid var(--ep-line); }
 .ep-contact h2 { font-size: clamp(60px, 7vw, 104px); font-weight: 400; letter-spacing: -.065em; line-height: .98; margin: 24px 0 54px; }
 .ep-contact > div { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }

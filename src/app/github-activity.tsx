@@ -35,7 +35,7 @@ export default function GitHubActivity() {
         <div><strong>{activity?.repos ?? "—"}</strong><span>REPOS<br />ACTIVE</span></div>
         <div><strong>{activity?.pushes ?? "—"}</strong><span>PUSHES<br />MADE</span></div>
       </div>
-      <p className="ep-activity-note">{activity ? "PUBLIC EVENTS · GITHUB MAY LAG" : "LOADING PUBLIC EVENTS"}</p>
+      <p className="ep-activity-note">{activity ? "PUBLIC EVENTS" : "LOADING PUBLIC EVENTS"}</p>
     </div>
   );
 }
